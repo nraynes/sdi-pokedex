@@ -39,6 +39,7 @@ function TopBar(props) {
         <div className='TopBar'>
             <div>
                 <h1 onClick={()=>{
+                    props.setArrPokemon(props.initVal)
                     props.setPageState('main')
                 }}>PokeDEX</h1>
                 <p onClick={()=>{

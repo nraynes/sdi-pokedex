@@ -73,6 +73,7 @@ function PokeDetails(props) {
         <div className='PokeDetails'>
             <div id='btnContainer'>
                 <button onClick={()=>{
+                    props.setArrPokemon(props.initVal)
                     props.setPageState('main')
                 }}>Return</button>
                 <button onClick={()=>{

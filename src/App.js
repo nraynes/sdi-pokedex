@@ -13,7 +13,7 @@ function App(props) {
     case 'main':
       return (
         <div className='App'>
-          <TopBar arrPokemon={props.initVal} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
+          <TopBar initVal={props.initVal} arrPokemon={props.initVal} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
           <div id={pageState}>
             {arrPokemon.map((obj, index) => {return (<PokeCard key={index} pokemon={obj} setCurCard={(card)=>{setCurCard(card)}} setPageState={(newState) => {setPageState(newState)}} />)})}
           </div>
@@ -22,17 +22,17 @@ function App(props) {
     case 'detail':
       return (
         <div className='App'>
-          <TopBar pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
+          <TopBar initVal={props.initVal} pageState={pageState} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} setPageState={(newState) => {setPageState(newState)}} />
           <div id={pageState}>
             <PokeCard pageState={pageState} pokemon={curCard} />
-            <PokeDetails pokemon={curCard} setPageState={(newState) => {setPageState(newState)}} />
+            <PokeDetails initVal={props.initVal} pokemon={curCard} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} setPageState={(newState) => {setPageState(newState)}} />
           </div>
         </div>
       );
     case 'about':
       return (
         <div className='App'>
-          <TopBar pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
+          <TopBar initVal={props.initVal} pageState={pageState} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} setPageState={(newState) => {setPageState(newState)}} />
           <div id={pageState}>
             <About />
           </div>
