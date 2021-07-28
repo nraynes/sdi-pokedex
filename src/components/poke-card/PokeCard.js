@@ -13,7 +13,7 @@ function PokeCard(props) {
     }
     strTypes = strTypes.slice(0, strTypes.length-2)
     return (
-        <div className='PokeCard' onClick={(e)=>{
+        <div className='PokeCard' id={props.pageState === 'detail' ? 'detailCard' : 'noDetail'} onClick={(e)=>{
             e.preventDefault()
             if (props.setCurCard && props.setPageState) {
                 props.setCurCard(pokemon)

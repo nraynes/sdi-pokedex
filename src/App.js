@@ -40,7 +40,7 @@ function App() {
         <div className='App'>
           <TopBar pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
           <div id={pageState}>
-            <PokeCard pokemon={curCard} />
+            <PokeCard pageState={pageState} pokemon={curCard} />
             <PokeDetails pokemon={curCard} setPageState={(newState) => {setPageState(newState)}} />
           </div>
         </div>
