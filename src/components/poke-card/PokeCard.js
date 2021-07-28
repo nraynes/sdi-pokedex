@@ -5,7 +5,6 @@ function PokeCard(props) {
     const { pokemon } = props;
     let arrTypes = [];
     let strTypes = '';
-    let nameOfClass = '';
     for (let i=0;i<pokemon.types.length;i++) {
         let curName = pokemon.types[i].type.name
         arrTypes.push(curName)
