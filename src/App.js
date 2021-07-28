@@ -1,21 +1,19 @@
 import './App.css';
-import React, { useState, useContext} from 'react';
+import React, { useState } from 'react';
 import TopBar from './components/top-bar/TopBar';
 import PokeCard from './components/poke-card/PokeCard'
 import About from './components/about/About';
 import PokeDetails from './components/poke-details/PokeDetails';
-import { arrPokeInit } from './index';
 
-function App() {
-  const initVal = useContext(arrPokeInit)
-  const [ arrPokemon, setArrPokemon ] = useState(initVal)
+function App(props) {
+  const [ arrPokemon, setArrPokemon ] = useState(props.initVal)
   const [ pageState, setPageState] = useState('main')
   const [ curCard, setCurCard ] = useState({})
   switch(pageState) {
     case 'main':
       return (
         <div className='App'>
-          <TopBar arrPokemon={initVal} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
+          <TopBar arrPokemon={props.initVal} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
           <div id={pageState}>
             {arrPokemon.map((obj, index) => {return (<PokeCard key={index} pokemon={obj} setCurCard={(card)=>{setCurCard(card)}} setPageState={(newState) => {setPageState(newState)}} />)})}
           </div>
