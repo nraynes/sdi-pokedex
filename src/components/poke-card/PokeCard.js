@@ -5,6 +5,7 @@ function PokeCard(props) {
     const { pokemon } = props;
     let arrTypes = [];
     let strTypes = '';
+    let nameOfClass = '';
     for (let i=0;i<pokemon.types.length;i++) {
         let curName = pokemon.types[i].type.name
         arrTypes.push(curName)
@@ -21,10 +22,12 @@ function PokeCard(props) {
         }}>
             <img src={pokemon.sprites.front_default} alt=''></img>
             <div id='cardStatBox'>
-                <label>Name:</label>
-                <p>{pokemon.name}</p>
-                <label>Types:</label>
-                <p>{strTypes}</p>
+                <label>Name:
+                    <p>{pokemon.name}</p>
+                </label>
+                <label>Types:
+                    <p>{strTypes}</p>
+                </label>
             </div>
         </div>
     );

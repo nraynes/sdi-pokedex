@@ -16,7 +16,8 @@ function PokeDetails(props) {
         pokeMoves += `${pokemon.moves[i].move.name}, `
     }
     pokeMoves = pokeMoves.slice(0, pokeMoves.length-2)
-    pokeStats.push(`Moves: ${pokeMoves}`)
+    pokeStats.push(`Pokemon Moves`)
+    pokeStats.push(`${pokeMoves}`)
 
     let pokeAbilities = ''
     for (let i=0;i<pokemon.abilities.length;i++) {
@@ -44,6 +45,7 @@ function PokeDetails(props) {
                     <div id='detailsContainer'>
                         <h2>Details</h2>
                         <div id='statsBox'>
+                            <h3>Stats</h3>
                             {pokeStats.map((curStat, index)=>{return (<p key={index}>{curStat}</p>)})}
                         </div>
                         <div id='abilitiesBox'>

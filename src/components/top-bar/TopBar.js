@@ -9,10 +9,11 @@ function TopBar(props) {
         if (props.pageState === 'main') {
             return (
                 <form>
-                    <label>Filter by Type:</label>
-                    <select ref={refType}>
-                        {arrTypes.map((strType, i)=>{return (<option key={i}>{strType}</option>)})}
-                    </select>
+                    <label>Filter by Type:
+                        <select ref={refType}>
+                            {arrTypes.map((strType, i)=>{return (<option key={i}>{strType}</option>)})}
+                        </select>
+                    </label>
                     <button onClick={(e) => {
                         e.preventDefault()
                         let input = (refType.current.value).toLowerCase()
@@ -29,19 +30,21 @@ function TopBar(props) {
                             }
                         }
                         props.setArrPokemon(newArr);
-                    }}>Filter</button>
+                    }}><strong>Filter</strong></button>
                 </form>
             );
         };
     };
     return (
         <div className='TopBar'>
-            <h1 onClick={()=>{
-                props.setPageState('main')
-            }}>PokeDEX</h1>
-            <p onClick={()=>{
-                props.setPageState('about')
-            }}>About</p>
+            <div>
+                <h1 onClick={()=>{
+                    props.setPageState('main')
+                }}>PokeDEX</h1>
+                <p onClick={()=>{
+                    props.setPageState('about')
+                }}>About</p>
+            </div>
             {loadFilter()}
         </div>
     );

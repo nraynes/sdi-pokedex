@@ -1,0 +1,43 @@
+.PokeDetails {
+    display: flex;
+    background-color: olivedrab;
+    border-radius: 20px;
+    margin: 20px;
+    width: 100%;
+    flex-direction: column;
+}
+#btnContainer {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    width: 95%;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+#btnContainer button {
+    background-color: darkcyan;
+    border: 0px;
+    border-radius: 10px;
+    width: 150px;
+    height: 45px;
+    font-size: 18px;
+}
+#detailsContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    margin: 20px;
+    border-radius: 20px;
+}
+#detailsContainer h2 {
+    margin-left: 15px;
+}
+#detailsContainer div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    background-color: aliceblue;
+    margin: 15px;
+    border-radius: 15px;
+    align-items: center;
+}

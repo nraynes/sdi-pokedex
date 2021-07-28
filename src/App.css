@@ -1,0 +1,14 @@
+.App {
+    display: grid;
+}
+#main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+#detail {
+    display: flex;
+}
+#about {
+    display: flex;
+    justify-content: center;
+}

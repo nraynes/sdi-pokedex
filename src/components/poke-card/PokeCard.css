@@ -1,0 +1,36 @@
+.PokeCard {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    border-radius: 20px;
+    width: 80%;
+    margin: 20px;
+}
+.PokeCard img {
+    display: flex;
+    width: 90%;
+    height: 80%;
+    background-color: aqua;
+    border-radius: 20px;
+    align-self: center;
+    margin: 7px;
+}
+.PokeCard div {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    background-color: beige;
+    justify-content: flex-start;
+    margin: 7px;
+    border-radius: 20px;
+}
+.PokeCard div label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+.PokeCard div label p {
+    margin-left: 5px;
+}

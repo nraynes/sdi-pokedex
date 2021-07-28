@@ -30,22 +30,28 @@ function App() {
       return (
         <div className='App'>
           <TopBar arrPokemon={arrFilter} setArrPokemon={(newArr) => {setArrPokemon(newArr)}} pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
-          {arrPokemon.map((obj, index) => {return (<PokeCard key={index} pokemon={obj} setCurCard={(card)=>{setCurCard(card)}} setPageState={(newState) => {setPageState(newState)}} />)})}
+          <div id={pageState}>
+            {arrPokemon.map((obj, index) => {return (<PokeCard key={index} pokemon={obj} setCurCard={(card)=>{setCurCard(card)}} setPageState={(newState) => {setPageState(newState)}} />)})}
+          </div>
         </div>
       )
     case 'detail':
       return (
         <div className='App'>
           <TopBar pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
-          <PokeCard pokemon={curCard} />
-          <PokeDetails pokemon={curCard} setPageState={(newState) => {setPageState(newState)}} />
+          <div id={pageState}>
+            <PokeCard pokemon={curCard} />
+            <PokeDetails pokemon={curCard} setPageState={(newState) => {setPageState(newState)}} />
+          </div>
         </div>
       );
     case 'about':
       return (
-        <div pageState={pageState} className='App'>
-          <TopBar setPageState={(newState) => {setPageState(newState)}} />
-          <About />
+        <div className='App'>
+          <TopBar pageState={pageState} setPageState={(newState) => {setPageState(newState)}} />
+          <div id={pageState}>
+            <About />
+          </div>
         </div>
       );
     default:

@@ -1,0 +1,44 @@
+.TopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+    width: 100%;
+    background-color:rgb(78, 86, 163);
+    overflow: hidden;
+}
+.TopBar div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+}
+.TopBar div p {
+    text-decoration: underline;
+    color:rgb(14, 191, 223);
+}
+.TopBar form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+    width: 350px;
+}
+.TopBar form label select {
+    height: 30px;
+    width: 150px;
+    margin-left: 5px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+.TopBar form button {
+    width: 80px;
+    height: 30px;
+    font-size: 18px;
+    border: 0px;
+    border-radius: 10px;
+    background-color:cadetblue;
+}
