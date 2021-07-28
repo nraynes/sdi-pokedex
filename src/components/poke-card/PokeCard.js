@@ -1,5 +1,6 @@
 import './PokeCard.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function PokeCard(props) {
     const { pokemon } = props;
@@ -12,22 +13,23 @@ function PokeCard(props) {
     }
     strTypes = strTypes.slice(0, strTypes.length-2)
     return (
-        <div className='PokeCard' id={props.pageState === 'detail' ? 'detailCard' : 'noDetail'} onClick={(e)=>{
+        <div className='PokeCard' id={props.location.pathname === '/details' || props.location.pathname === '/details/environment' ? 'detailCard' : 'noDetail'} onClick={(e)=>{
             e.preventDefault()
-            if (props.setCurCard && props.setPageState) {
+            if (props.setCurCard) {
                 props.setCurCard(pokemon)
-                props.setPageState('detail')
             }
         }}>
-            <img src={pokemon.sprites.front_default} alt=''></img>
-            <div id='cardStatBox'>
-                <label>Name:
-                    <p>{pokemon.name}</p>
-                </label>
-                <label>Types:
-                    <p>{strTypes}</p>
-                </label>
-            </div>
+            <Link to='/details'>
+                <img src={pokemon.sprites.front_default} alt=''></img>
+                <div id='cardStatBox'>
+                    <label>Name:
+                        <p>{pokemon.name}</p>
+                    </label>
+                    <label>Types:
+                        <p>{strTypes}</p>
+                    </label>
+                </div>
+            </Link>
         </div>
     );
 };

@@ -1,12 +1,13 @@
 import './TopBar.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function TopBar(props) {
     const arrTypes = ['Normal', 'Fire', 'Water', 'Grass', 'Flying', 'Fighting', 'Poison', 
     'Electric', 'Ground', 'Rock', 'Psychic', 'Ice', 'Bug', 'Ghost', 'Steel', 'Dragon', 'Dark', 'Fairy']
     const refType = React.useRef()
     function loadFilter() {
-        if (props.pageState === 'main') {
+        if (props.location.pathname === '/') {
             return (
                 <form>
                     <label>Filter by Type:
@@ -38,13 +39,10 @@ function TopBar(props) {
     return (
         <div className='TopBar'>
             <div>
-                <h1 onClick={()=>{
+                <Link to='/'><h1 onClick={()=>{
                     props.setArrPokemon(props.initVal)
-                    props.setPageState('main')
-                }}>PokeDEX</h1>
-                <p onClick={()=>{
-                    props.setPageState('about')
-                }}>About</p>
+                }}>PokeDEX</h1></Link>
+                <Link to='/about'>About</Link>
             </div>
             {loadFilter()}
         </div>

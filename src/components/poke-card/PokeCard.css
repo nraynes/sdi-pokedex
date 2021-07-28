@@ -8,35 +8,35 @@
 }
 .PokeCard img {
     display: flex;
-    width: 90%;
+    width: 95%;
     height: 80%;
     background-color: aqua;
     border-radius: 20px;
     align-self: center;
     margin: 7px;
 }
-.PokeCard div {
+#cardStatBox {
     display: flex;
     flex-direction: column;
     align-self: center;
-    width: 90%;
+    width: 95%;
     background-color: beige;
     justify-content: flex-start;
     margin: 7px;
     border-radius: 20px;
 }
-.PokeCard div label {
+#cardStatBox label {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 10px;
 }
-.PokeCard div label p {
+#cardStatBox label p {
     margin-left: 5px;
 }
 #detailCard {
     height: 100%;
     max-height: 500px;
     width: 100%;
-    max-width: 400px;
+    max-width: 370px;
 }

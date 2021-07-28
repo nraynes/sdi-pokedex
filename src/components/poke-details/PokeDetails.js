@@ -1,8 +1,9 @@
 import './PokeDetails.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function PokeDetails(props) {
-    const [detailStatus, setDetailStatus] = React.useState('details')
+    const [detailStatus, setDetailStatus] = React.useState('/details/environment')
     const [btnText, setBtnText] = React.useState('Show Environment')
     const [location, setLocation] = React.useState('Loading...')
     const { pokemon } = props;
@@ -25,7 +26,7 @@ function PokeDetails(props) {
     }
     pokeAbilities = pokeAbilities.slice(0, pokeAbilities.length-2)
     React.useEffect(()=>{
-        if (detailStatus === 'env') {
+        if (detailStatus === '/details/environment') {
             fetch(pokemon.location_area_encounters)
               .then((data) => data.json())
               .then((data) => {
@@ -40,7 +41,7 @@ function PokeDetails(props) {
     }, [detailStatus, pokemon]);
     let getSheet = () => {
         switch(detailStatus) {
-            case 'details':
+            case '/details/environment':
                 return (
                     <div id='detailsContainer'>
                         <h2>Details</h2>
@@ -54,7 +55,7 @@ function PokeDetails(props) {
                         </div>
                     </div>
                 );
-            case 'env':
+            case '/details':
                 return (
                     <div id='detailsContainer'>
                         <h2>Environment</h2>
@@ -72,19 +73,18 @@ function PokeDetails(props) {
     return (
         <div className='PokeDetails'>
             <div id='btnContainer'>
-                <button onClick={()=>{
+                <Link to='/'><button onClick={()=>{
                     props.setArrPokemon(props.initVal)
-                    props.setPageState('main')
-                }}>Return</button>
-                <button onClick={()=>{
-                    if (detailStatus === 'details') {
-                        setBtnText('Show Abilities')
-                        setDetailStatus('env')
-                    } else if (detailStatus === 'env') {
+                }} >Return</button></Link>
+                <Link to={detailStatus}><button onClick={()=>{
+                    if (detailStatus === '/details') {
                         setBtnText('Show Environment')
-                        setDetailStatus('details')
+                        setDetailStatus('/details/environment')
+                    } else if (detailStatus === '/details/environment') {
+                        setBtnText('Show Abilities')
+                        setDetailStatus('/details')
                     }
-                }}>{btnText}</button>
+                }}>{btnText}</button></Link>
             </div>
             {getSheet()}
         </div>

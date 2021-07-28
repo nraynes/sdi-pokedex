@@ -1,4 +1,10 @@
+body, html {
+  height: auto;
+}
 body {
+  background-image: linear-gradient(to bottom right, darkorange, goldenrod, rgb(190, 190, 48));
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

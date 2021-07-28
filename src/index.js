@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 let arrProm = [];
 for (let i=1;i <= 151;i++) {
@@ -15,7 +16,9 @@ for (let i=1;i <= 151;i++) {
 Promise.all(arrProm)
   .then((res) => {ReactDOM.render(
       <React.StrictMode>
-        <App initVal={res}/>
+        <Router>
+          <Route path='/' component={props => <App initVal={res} {...props} />} />
+        </Router>
       </React.StrictMode>,
     document.getElementById('root')
   );})

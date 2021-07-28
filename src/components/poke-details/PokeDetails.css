@@ -32,6 +32,9 @@
 #detailsContainer h2 {
     margin-left: 15px;
 }
+#envBox {
+    height: 100vh;
+}
 #detailsContainer div {
     display: flex;
     flex-direction: column;
